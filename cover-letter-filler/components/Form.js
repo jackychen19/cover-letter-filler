@@ -8,20 +8,38 @@ const Form = () => {
   const [event, setEvent] = useState('[EVENT]');
   const [company, setCompany] = useState('[COMPANY]');
 
+  const handleDate = (e) => {
+    setDate(e.target.value);
+  }
 
+  const handleAddress = (e) => {
+    setAddress(e.target.value);
+  }
+
+  const handlePosition = (e) => {
+    setPosition(e.target.value);
+  }
+
+  const handleEvent = (e) => {
+    setEvent(e.target.value);
+  }
+
+  const handleCompany = (e) => {
+    setCompany(e.target.value);
+  }
 
   return (
     <div className={styles.form_container}>
       Set date:
-      <input onChange={setDate}></input><br/>
-      Set address:
-      <input onChange={setAddress}></input> <br/>
-      Set position:
-      <input onChange={setPosition}></input> <br/>
-      Set event:
-      <input onChange={setEvent}></input> <br/>
+      <input onChange={handleDate}></input><br/>
       Set company:
-      <input onChange={setCompany}></input><br/><br/>
+      <input onChange={handleCompany}></input><br/>
+      Set address:
+      <input onChange={handleAddress}></input><br/>
+      Set position:
+      <input onChange={handlePosition}></input><br/>
+      Set event:
+      <input onChange={handleEvent}></input><br/><br/>
 
       <div>
       {date}<br/>
