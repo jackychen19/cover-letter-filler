@@ -14,8 +14,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>
           Cover Letter Filler
-        </h1>
-        <p>Get started by importing your cover letter!</p>
+        </h1><br/>
       <Form/>
       </main>
 
