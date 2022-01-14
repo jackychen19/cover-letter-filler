@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css'
 
 const Form = () => {
@@ -9,26 +9,6 @@ const Form = () => {
   const [ company, setCompany ] = useState('[COMPANY]');
 
   const linkedInURL = 'https://www.linkedin.com/in/chen-jacky';
-
-  const handleDate = (e) => {
-    setDate(e.target.value);
-  }
-
-  const handleAddress = (e) => {
-    setAddress(e.target.value);
-  }
-
-  const handlePosition = (e) => {
-    setPosition(e.target.value);
-  }
-
-  const handleEvent = (e) => {
-    setEvent(e.target.value);
-  }
-
-  const handleCompany = (e) => {
-    setCompany(e.target.value);
-  }
 
   const copyLinkedIn = () => {
     navigator.clipboard.writeText('https://www.linkedin.com/in/chen-jacky');
@@ -45,15 +25,15 @@ const Form = () => {
   return (
     <div className={styles.form_container}>
       Set date:
-      <input onChange={handleDate}></input><br/>
+      <input onChange={(e) => setDate(e.target.value)}></input><br/>
       Set company:
-      <input onChange={handleCompany}></input><br/>
+      <input onChange={(e) => setCompany(e.target.value)}></input><br/>
       Set address:
-      <input onChange={handleAddress}></input><br/>
+      <input onChange={(e) => setAddress(e.target.value)}></input><br/>
       Set position:
-      <input onChange={handlePosition}></input><br/>
+      <input onChange={(e) => setPosition(e.target.value)}></input><br/>
       Set event:
-      <input onChange={handleEvent}></input><br/><br/>
+      <input onChange={(e) => setEvent(e.target.value)}></input><br/><br/>
 
       <label className={styles.url_label}>URLs:</label><br/>
       <div className={styles.tooltip}>
