@@ -71,7 +71,7 @@ const Form = () => {
           'padding': '70px 90px 90px 90px',
           'font-family': 'serif'
         }}
-        >
+      >
         <p>
         <br/>{date}<br/>
 
