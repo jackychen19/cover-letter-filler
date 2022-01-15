@@ -50,11 +50,11 @@ const Form = () => {
               <EventIcon className={styles.date} onClick={(e) => getTodayDate()}/>
             </InputAdornment>
           ),
-        }}></TextField>
-      <TextField className={styles.input} margin='dense' size='small' label='Company' variant='outlined' onChange={(e) => setCompany(e.target.value)}></TextField>
-      <TextField className={styles.input} margin='dense' size='small' label='Address' variant='outlined' onChange={(e) => setAddress(e.target.value)}></TextField>
-      <TextField className={styles.input} margin='dense' size='small' label='Position' variant='outlined' onChange={(e) => setPosition(e.target.value)}></TextField>
-      <TextField className={styles.input} margin='dense' size='small' label='Event' variant='outlined' onChange={(e) => setEvent(e.target.value)}></TextField><br/><br/>
+        }}/>
+      <TextField className={styles.input} margin='dense' size='small' label='Company' variant='outlined' onChange={(e) => setCompany(e.target.value)}/>
+      <TextField className={styles.input} margin='dense' size='small' label='Address' variant='outlined' onChange={(e) => setAddress(e.target.value)}/>
+      <TextField className={styles.input} margin='dense' size='small' label='Position' variant='outlined' onChange={(e) => setPosition(e.target.value)}/>
+      <TextField className={styles.input} margin='dense' size='small' label='Event' variant='outlined' onChange={(e) => setEvent(e.target.value)}/><br/><br/>
 
       <u>URLs:</u><br/>
 
