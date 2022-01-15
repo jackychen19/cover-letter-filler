@@ -91,6 +91,21 @@ const Form = () => {
         title='Copy'>
         <IconButton>
           <Image
+            src='/email-icon.png'
+            width={50}
+            height={50}
+            alt='Copy'
+            onClick={() => {navigator.clipboard.writeText('jacky.chen0319@gmail.com')}}
+          />
+        </IconButton>
+      </Tooltip>
+
+      <Tooltip
+        TransitionComponent={Fade}
+        TransitionProps={{ timeout: 600 }}
+        title='Copy'>
+        <IconButton>
+          <Image
             src='/linkedin-icon.png'
             width={50}
             height={50}
