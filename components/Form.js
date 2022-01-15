@@ -26,7 +26,6 @@ const Form = () => {
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const d = new Date();
     const fullDate = `${monthNames[d.getMonth()]} ${d.getDate()}, ${1900 + d.getYear()}`
-    // dateInput.value = fullDate;
     setDate(fullDate);
   }
 
