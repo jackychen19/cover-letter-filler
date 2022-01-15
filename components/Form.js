@@ -55,7 +55,21 @@ const Form = () => {
       <TextField className={styles.input} margin='dense' size='small' label='Position' variant='outlined' onChange={(e) => setPosition(e.target.value)}/>
       <TextField className={styles.input} margin='dense' size='small' label='Event' variant='outlined' onChange={(e) => setEvent(e.target.value)}/><br/><br/>
 
-      <u>URLs:</u><br/>
+      <Tooltip
+        TransitionComponent={Fade}
+        TransitionProps={{ timeout: 600 }}
+        title='Edit'>
+        <IconButton>
+          <Image
+            src='/google-docs-icon.png'
+            width={50}
+            height={50}
+            alt='Google Docs'
+            onClick={() => {window.open('https://docs.google.com/document/d/1ssnDs7m48hGJoZR5c0019wNGgJxD1E1VnfgVuWeofaM/edit')}}
+            />
+          <p className={styles.gitHub} onClick={() => {copyGitHub()}}></p>
+        </IconButton>
+      </Tooltip>
 
       <Tooltip
         TransitionComponent={Fade}
