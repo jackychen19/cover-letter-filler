@@ -58,7 +58,7 @@ const Form = () => {
       <Tooltip
         TransitionComponent={Fade}
         TransitionProps={{ timeout: 600 }}
-        title='Edit'>
+        title='Letter'>
         <IconButton>
           <Image
             src='/google-docs-icon.png'
@@ -67,7 +67,21 @@ const Form = () => {
             alt='Google Docs'
             onClick={() => {window.open('https://docs.google.com/document/d/1ssnDs7m48hGJoZR5c0019wNGgJxD1E1VnfgVuWeofaM/edit')}}
             />
-          <p className={styles.gitHub} onClick={() => {copyGitHub()}}></p>
+        </IconButton>
+      </Tooltip>
+
+      <Tooltip
+        TransitionComponent={Fade}
+        TransitionProps={{ timeout: 600 }}
+        title='Resume'>
+        <IconButton>
+          <Image
+            src='/resume-icon.png'
+            width={50}
+            height={50}
+            alt='Resume'
+            onClick={() => {window.open('https://docs.google.com/document/d/15e3KoduVmc__nxI6cEZ4isIM8FzJMTyJ9Vxo3Gs68zs/edit')}}
+            />
         </IconButton>
       </Tooltip>
 
@@ -98,7 +112,6 @@ const Form = () => {
             alt='Github'
             onClick={() => {navigator.clipboard.writeText('https://github.com/jackychen19')}}
             />
-          <p className={styles.gitHub} onClick={() => {copyGitHub()}}></p>
         </IconButton>
       </Tooltip>
 
