@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { IconButton, Fade, Paper, TextField, Tooltip } from '@mui/material';
+import EventIcon from '@mui/icons-material/Event';
+import { IconButton, InputLabel, InputAdornment, Fade, Paper, TextField, Tooltip } from '@mui/material';
 import styles from '../styles/Home.module.css'
 
 const Form = () => {
@@ -19,9 +20,37 @@ const Form = () => {
     if (!company.length) setCompany('[COMPANY]')
   }, [date, address, position, event, company])
 
+  // Gets today's date
+  const getTodayDate = () => {
+    const dateInput = document.getElementById('date');
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const d = new Date();
+    const fullDate = `${monthNames[d.getMonth()]} ${d.getDate()}, ${1900 + d.getYear()}`
+    // dateInput.value = fullDate;
+    setDate(fullDate);
+  }
+
   return (
     <div className={styles.form_container}>
-      <TextField className={styles.input} margin='dense' size='small' label='Date' variant='outlined' onChange={(e) => setDate(e.target.value)}></TextField>
+      <TextField
+        id='date'
+        className={styles.input}
+        size='small'
+        label='Date'
+        variant='outlined'
+        onChange={(e) => setDate(e.target.value)}
+        style={{
+          'width': '195px',
+          'margin': '8px 7.5px 8px 0px'
+        }}
+
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position='end'>
+              <EventIcon className={styles.date} onClick={(e) => getTodayDate()}/>
+            </InputAdornment>
+          ),
+        }}></TextField>
       <TextField className={styles.input} margin='dense' size='small' label='Company' variant='outlined' onChange={(e) => setCompany(e.target.value)}></TextField>
       <TextField className={styles.input} margin='dense' size='small' label='Address' variant='outlined' onChange={(e) => setAddress(e.target.value)}></TextField>
       <TextField className={styles.input} margin='dense' size='small' label='Position' variant='outlined' onChange={(e) => setPosition(e.target.value)}></TextField>
@@ -40,8 +69,7 @@ const Form = () => {
             height={50}
             alt='LinkedIn'
             onClick={() => {navigator.clipboard.writeText('https://www.linkedin.com/in/chen-jacky')}}
-            >
-          </Image>
+            />
         </IconButton>
       </Tooltip>
 
@@ -56,8 +84,7 @@ const Form = () => {
             height={50}
             alt='Github'
             onClick={() => {navigator.clipboard.writeText('https://github.com/jackychen19')}}
-            >
-          </Image>
+            />
           <p className={styles.gitHub} onClick={() => {copyGitHub()}}></p>
         </IconButton>
       </Tooltip>
