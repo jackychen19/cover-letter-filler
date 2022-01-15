@@ -19,16 +19,6 @@ const Form = () => {
     if (!company.length) setCompany('[COMPANY]')
   }, [date, address, position, event, company])
 
-  const copyLinkedIn = () => {
-    navigator.clipboard.writeText('https://www.linkedin.com/in/chen-jacky');
-  }
-
-  const copyGitHub = () => {
-    navigator.clipboard.writeText('https://github.com/jackychen19');
-    let tooltip = document.getElementById('gitHubToolTip');
-    tooltip.innerHTML = 'Copied!'
-  }
-
   return (
     <div className={styles.form_container}>
       <TextField className={styles.input} margin='dense' size='small' label='Date' variant='outlined' onChange={(e) => setDate(e.target.value)}></TextField>
