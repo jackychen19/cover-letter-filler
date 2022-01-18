@@ -137,7 +137,8 @@ const Form = () => {
         style={{
           'margin-top': '15px',
           'padding': '70px 90px 90px 90px',
-          'font-family': 'serif'
+          'font-family': 'serif',
+          'width': 'clamp(450px, 100%, 800px)'
         }}
       >
         <p>
